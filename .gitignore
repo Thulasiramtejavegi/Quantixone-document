@@ -1,0 +1,10 @@
+site/
+.cache/
+*.pyc
+__pycache__/
+*.swp
+*.swo
+*~
+.DS_Store
+env/
+venv/
