@@ -37,6 +37,6 @@ The following video demonstrates the complete signup validation process:
 </video>
 
 
-## new page
+## new page updated
 
 The following text is autodeployed from github actions
