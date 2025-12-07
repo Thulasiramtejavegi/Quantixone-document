@@ -1,5 +1,5 @@
 site_name: QuantixOne_Documentation
-site_url: https://your-domain.com
+site_url: https://docs.quantixone.com
 theme:
   name: material
   logo: assets/logo.png
