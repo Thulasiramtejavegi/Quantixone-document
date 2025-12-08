@@ -50,6 +50,20 @@ Enter this OTP in the verification field on the sign-up page.
 ### Step 6: Complete Registration
 
 After successful verification, you will be redirected to the Sign-In page.
+## Signup Validation (Video Demo)
+
+The following video demonstrates the complete signup validation process from start to finish:
+
+<video 
+  controls 
+  width="800"
+  controlsList="nodownload noremoteplayback"
+  oncontextmenu="return false;"
+  disablePictureInPicture
+>
+  <source src="https://dbmgw9llaznft.cloudfront.net/videos/cognito-signup-validator.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -133,6 +147,33 @@ Enter this OTP in the sign-in verification field.
 ### Step 5: Access Dashboard
 
 After successful verification, you'll be redirected to the QuantixOne Dashboard.
+
+---
+
+---
+
+## Onboarding Workflow (Mermaid)
+```mermaid
+flowchart TD
+    A[User Opens Signup Page] --> B[Enter Username, Email, Mobile]
+    B --> C[Click Sign Up Button]
+    C --> D[6-digit OTP Sent to Email]
+    D --> E[User Enters OTP]
+    E -->|Valid OTP| F[Account Verified]
+    E -->|Invalid OTP| E1[Show Error - Re-enter OTP]
+    
+    F --> G[Redirect to Sign-In Page]
+    G --> H[Enter Registered Email]
+    H --> I[Click Sign In Button]
+    I --> J[8-digit OTP Sent to Email]
+    J --> K[User Enters Sign-In OTP]
+    K -->|Valid OTP| L[Redirect to Dashboard]
+    K -->|Invalid OTP| K1[Show Error - Re-enter OTP]
+    
+    L --> M[Session Active for 10 Hours]
+    M --> N[Session Expires After 10 Hours]
+    N --> G
+```
 
 ---
 
