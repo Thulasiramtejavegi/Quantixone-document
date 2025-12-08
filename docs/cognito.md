@@ -182,13 +182,7 @@ If you see this error, it means an account with this email already exists. Try:
 If your OTP is rejected:
 
 - Check if you entered the correct OTP
-- OTP expires in 5 minutes - request a new one if needed
-- Ensure you're checking the correct email/SMS
-
-**Issue 3: "Invalid Aadhaar/PAN format"**
-
-- Aadhaar must be exactly 12 numeric digits
-- PAN must follow the format: 5 letters + 4 numbers + 1 letter (e.g., ABCDE1234F)
+- Ensure you're checking the correct email
 
 ---
 
