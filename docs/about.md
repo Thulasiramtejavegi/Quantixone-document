@@ -2,4 +2,4 @@
 
 For product details visit [Quantixone](https://quantixone.com/).
 
-## Comming soon
+## More Detail Comming soon
