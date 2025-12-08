@@ -7,6 +7,7 @@ This page explains the Cognito signup validation flow integrated into the Quanti
 ---
 
 ## Signup Validation Workflow (Mermaid)
+
 ```mermaid
 flowchart TD
     A[User Opens Signup Page] --> B[User Enters Signup Details]
@@ -31,12 +32,19 @@ flowchart TD
 
 The following video demonstrates the complete signup validation process:
 
-<video controls width="800">
+<video 
+  controls 
+  width="800"
+  controlsList="nodownload noremoteplayback"
+  oncontextmenu="return false;"
+  disablePictureInPicture
+>
   <source src="https://dbmgw9llaznft.cloudfront.net/cognito-signup-validator.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
+---
 
-## new page updated
+## New Page Updated
 
 The following text is autodeployed from github actions
