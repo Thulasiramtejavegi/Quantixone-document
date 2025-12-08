@@ -5,16 +5,6 @@ on:
     branches:
       - develop
   workflow_dispatch:
-    inputs:
-      version_bump:
-        description: 'Version bump type'
-        required: true
-        type: choice
-        options:
-          - patch  # v1.0.0 -> v1.0.1
-          - minor  # v1.0.0 -> v1.1.0
-          - major  # v1.0.0 -> v2.0.0
-        default: patch
 
 permissions:
   contents: write
@@ -35,86 +25,23 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: |
           pip install mkdocs-material
+          pip install mike
 
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Generate next version
-        id: version
-        run: |
-          # Get the latest version tag
-          LATEST_TAG=$(git tag -l "v*.*.*" --sort=-v:refname | head -n 1)
-          
-          # If no tags exist, start with v1.0.0
-          if [ -z "$LATEST_TAG" ]; then
-            NEW_VERSION="v1.0.0"
-          else
-            # Remove 'v' prefix
-            CURRENT_VERSION=${LATEST_TAG#v}
-            
-            # Split version into major.minor.patch
-            IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
-            
-            # Determine bump type (default to patch for auto-deploy)
-            BUMP_TYPE="${{ github.event.inputs.version_bump }}"
-            if [ -z "$BUMP_TYPE" ]; then
-              BUMP_TYPE="patch"
-            fi
-            
-            # Increment version
-            case $BUMP_TYPE in
-              major)
-                MAJOR=$((MAJOR + 1))
-                MINOR=0
-                PATCH=0
-                ;;
-              minor)
-                MINOR=$((MINOR + 1))
-                PATCH=0
-                ;;
-              patch)
-                PATCH=$((PATCH + 1))
-                ;;
-            esac
-            
-            NEW_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
-          fi
-          
-          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
-          echo "📦 New version: $NEW_VERSION"
-          echo "::notice::Deploying version $NEW_VERSION"
-
-      - name: Create version tag
-        run: |
-          git tag ${{ steps.version.outputs.version }} -m "Release ${{ steps.version.outputs.version }}"
-          git push origin ${{ steps.version.outputs.version }}
-          echo "✅ Created and pushed tag: ${{ steps.version.outputs.version }}"
-
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
-
-      - name: Deployment summary
-        run: |
-          echo "### 🚀 Deployment Successful" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Version:** \`${{ steps.version.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Site:** https://docs.quantixone.com" >> $GITHUB_STEP_SUMMARY
-          echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Author:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "#### To rollback using git:" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "# List available versions" >> $GITHUB_STEP_SUMMARY
-          echo "git tag -l 'v*.*.*' --sort=-v:refname" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "# Checkout previous version" >> $GITHUB_STEP_SUMMARY
-          echo "git checkout <version-tag>" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "# Push to trigger redeployment" >> $GITHUB_STEP_SUMMARY
-          echo "git push origin HEAD:develop --force" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
