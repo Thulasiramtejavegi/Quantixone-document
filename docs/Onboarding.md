@@ -8,7 +8,7 @@ This page explains the complete onboarding process for QuantixOne, including sig
 
 ## Sign Up
 
-### The QuantixOne Sign-Up Page
+### QuantixOne Sign-Up Page
 
 The QuantixOne Sign-Up Page enables new users to register quickly and securely. It's designed with a clean, two-column layout — a user form on the left and real customer testimonials on the right — ensuring both usability and brand trust.
 
@@ -104,7 +104,7 @@ Fields include:
 
 ## Sign-In Process
 
-### The QuantixOne Sign-In Page
+### QuantixOne Sign-In Page
 
 The Sign-In Page enables verified users to access their QuantixOne account using secure, OTP-based authentication. It offers a passwordless login mechanism, enhancing security and simplifying access.
 
