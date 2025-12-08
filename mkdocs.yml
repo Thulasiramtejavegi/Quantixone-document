@@ -69,7 +69,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Introduction: introduction.md
   - Onboarding: Onboarding.md
-  - Cognito: cognito.md
+  - Format: Mkdocs-format.md
   - About: about.md
