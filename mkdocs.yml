@@ -70,5 +70,5 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Onboarding: Onboarding.md
-  - Format: Mkdocs-format.md
+  # - Format: Mkdocs-format.md ``commented out check the file for the guide to create mkdocs format``
   - About: about.md
