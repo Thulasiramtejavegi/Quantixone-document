@@ -270,6 +270,3 @@ A: OTP verification is instant. Account activation happens immediately after suc
 
 ---
 
-<div style="background-color: #e3f2fd; padding: 20px; border-left: 4px solid #2196f3; margin-top: 30px;">
-  <strong>📌 Pro Tip:</strong> Keep your login credentials secure and never share your OTP with anyone. QuantixOne staff will never ask for your password or OTP.
-</div>
