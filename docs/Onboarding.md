@@ -14,7 +14,7 @@ The QuantixOne Sign-Up Page enables new users to register quickly and securely. 
 
 <div align="center">
   <img 
-    src="https://dbmgw9llaznft.cloudfront.net/images/signup-image-test.png" 
+    src="https://media-docs.quantixone.com/images/signup-image-test.png" 
     alt="Sign Up Page" 
     width="700"
     controlsList="nodownload"
@@ -69,7 +69,7 @@ The following video demonstrates the complete signup validation process from sta
   oncontextmenu="return false;"
   disablePictureInPicture
 >
-  <source src="https://dbmgw9llaznft.cloudfront.net/videos/cognito-signup-validator.webm" type="video/webm">
+  <source src="https://media-docs.quantixone.com/videos/cognito-signup-validator.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -110,7 +110,7 @@ The Sign-In Page enables verified users to access their QuantixOne account using
 
 <div align="center">
   <img 
-    src="https://dbmgw9llaznft.cloudfront.net/images/signin-image-test.png" 
+    src="https://media-docs.quantixone.com/images/signin-image-test.png" 
     alt="Sign In Page" 
     width="700"
     controlsList="nodownload"
