@@ -2,4 +2,6 @@
 
 QuantixOne is a smarter, lighter platform built AI-first to automate everything from lead capture to client delivery.
 
-## More Detail Comming soon
+For product details visit [Quantixone](https://quantixone.com/).
+
+**More Detail Comming soon...**
