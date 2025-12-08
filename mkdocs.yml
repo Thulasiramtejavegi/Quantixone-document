@@ -1,4 +1,4 @@
-site_name: QuantixOne_Documentation
+site_name: QuantixOne Documentation
 site_url: https://docs.quantixone.com
 theme:
   name: material

@@ -13,7 +13,15 @@ This page explains the complete onboarding process for QuantixOne, including sig
 The QuantixOne Sign-Up Page enables new users to register quickly and securely. It's designed with a clean, two-column layout — a user form on the left and real customer testimonials on the right — ensuring both usability and brand trust.
 
 <div align="center">
-  <img src="https://dbmgw9llaznft.cloudfront.net/images/signup-image-test.png" alt="Sign Up Page" width="700">
+  <img 
+    src="https://dbmgw9llaznft.cloudfront.net/images/signup-image-test.png" 
+    alt="Sign Up Page" 
+    width="700"
+    controlsList="nodownload"
+    oncontextmenu="return false;"
+    ondragstart="return false;"
+    style="pointer-events: none; user-select: none;"
+  >
   <p><em>Figure 1: QuantixOne Sign Up Interface</em></p>
 </div>
 
@@ -101,7 +109,15 @@ Fields include:
 The Sign-In Page enables verified users to access their QuantixOne account using secure, OTP-based authentication. It offers a passwordless login mechanism, enhancing security and simplifying access.
 
 <div align="center">
-  <img src="https://dbmgw9llaznft.cloudfront.net/images/signin-image-test.png" alt="Sign In Page" width="700">
+  <img 
+    src="https://dbmgw9llaznft.cloudfront.net/images/signin-image-test.png" 
+    alt="Sign In Page" 
+    width="700"
+    controlsList="nodownload"
+    oncontextmenu="return false;"
+    ondragstart="return false;"
+    style="pointer-events: none; user-select: none;"
+  >
   <p><em>Figure 2: QuantixOne Sign In Interface</em></p>
 </div>
 
@@ -152,7 +168,7 @@ After successful verification, you'll be redirected to the QuantixOne Dashboard.
 
 ---
 
-## Onboarding Workflow (Mermaid)
+## Onboarding Workflow
 ```mermaid
 flowchart TD
     A[User Opens Signup Page] --> B[Enter Username, Email, Mobile]
@@ -206,7 +222,7 @@ flowchart TD
 
 ### Security Guidelines
 
-- Do not request multiple OTPs in quick succession — the system has a limited OTP quota.
+- Do not request multiple OTPs in quick succession — the system has a limited OTP quota for users.
 - Avoid logging in from multiple tabs or browsers simultaneously.
 
 ---
@@ -244,8 +260,8 @@ QuantixOne uses passwordless, OTP-based authentication over encrypted HTTPS conn
 
 | Purpose | OTP Type | Delivery Method |
 |---------|----------|-----------------|
-| Sign-Up Verification | 6-digit OTP | Outlook email |
-| Sign-In Authentication | 8-digit OTP | Registered email |
+| Sign-Up Verification | 6-digit OTP | Verified Outlook email |
+| Sign-In Authentication | 8-digit OTP | Registered Outlook email |
 
 ---
 
@@ -300,15 +316,13 @@ A:
 - Avoid sending too many OTP requests — there's a limited quota.
 
 **Q: How long will my login session remain active?**  
-A: Once signed in, your session stays active for **10 hours** in the same browser tab. After that, you'll need to sign in again with a new OTP.
+A: Once signed in, your session stays active for **10 hours** in the same browser tab. After that, you'll need to sign in again with a new OTP. Do not attempt multiple login's.
 
 **Q: Can I log in from multiple tabs or browsers?**  
 A: No. For security and stability, QuantixOne allows only one active session per user. Stay logged in within the same tab or browser.
 
 **Q: What should I do if my OTP is invalid or expired?**  
-A: 
-- Request a new OTP and enter it carefully.
-- Only the latest OTP sent to your email will be valid.
+A: Request a new OTP and enter it carefully. Only the latest OTP sent to your email will be valid.
 
 **Q: Is the authentication process secure?**  
 A: Yes. QuantixOne uses passwordless, OTP-based authentication over encrypted HTTPS connections, ensuring your login is fully secure.
