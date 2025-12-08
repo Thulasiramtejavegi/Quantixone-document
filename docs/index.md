@@ -4,4 +4,6 @@ QuantixOne is a smarter, lighter platform built AI-first to automate everything 
 
 For product details visit [Quantixone](https://quantixone.com/).
 
+testing of version process with git commit and mike version command
+
 **More Detail Comming soon...**
